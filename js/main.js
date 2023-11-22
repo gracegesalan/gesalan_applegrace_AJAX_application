@@ -7,6 +7,8 @@
   const materialTemplate = document.querySelector("#materials-template");
   const materialList = document.querySelector("#materials-list");
 
+
+
 const spinner = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="204px" height="204px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
 <g transform="rotate(0 50 50)">
   <rect x="47.5" y="2.5" rx="2.5" ry="6.3" width="5" height="21" fill="#0062ff">
@@ -115,7 +117,7 @@ const spinner = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www
  
 
   function loadMaterialInfo() {
-
+    
     fetch("https://swiftpixel.com/earbud/api/materials")
     .then((response) => response.json())
     .then((materialListData) => {
@@ -131,6 +133,7 @@ const spinner = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www
         const materialDescription = clone.querySelector(".material-description");
         materialDescription.textContent = material.description;
   
+        
         // append the populated template to the list
         materialList.appendChild(clone);
       })
