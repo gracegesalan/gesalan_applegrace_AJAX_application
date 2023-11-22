@@ -71,7 +71,7 @@ const spinner = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www
 
   //functions
   function modelLoaded() {
-    model.innerHTML = "";
+    // model.innerHTML = "";
     hotspots.forEach(hotspot => {
       hotspot.style.display = "block";
     });
@@ -84,9 +84,9 @@ const spinner = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www
     .then((infoBoxes) => {
       console.log(infoBoxes);
 
-      model.innerHTML = "";
+      // model.innerHTML = "";
       
-      infoBoxes.forEach((infoBox, index) => {
+        infoBoxes.forEach((infoBox, index) => {
         let selected = document.querySelector (`#hotspot-${index+1}`);
     
         const titleElement = document.createElement('h3');
