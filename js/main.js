@@ -4,6 +4,8 @@
   const model = document.querySelector("#model");
   const hotspots = document.querySelectorAll(".Hotspot");
 
+  const container = document.querySelector("#container");
+
   const materialTemplate = document.querySelector("#materials-template");
   const materialList = document.querySelector("#materials-list");
 
@@ -78,7 +80,7 @@ const spinner = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www
   }
 
   function loadInfoBoxes() {
-    model.innerHTML = spinner;
+    head.innerHTML = spinner;
     fetch("https://swiftpixel.com/earbud/api/infoboxes")
     .then((response) => response.json())
     .then((infoBoxes) => {
@@ -98,10 +100,12 @@ const spinner = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www
         const imgElement = document.createElement('img');
         imgElement.src = `images/${infoBox.thumbnail}`;
         
-        model.innerHTML = "";
+        // model.innerHTML = "";
         selected.appendChild(imgElement);
         selected.appendChild(titleElement);
         selected.appendChild(textElement);
+
+        head.innerHTML = "";
         });
       })
           .catch((error) => { 
